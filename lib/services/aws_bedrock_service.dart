@@ -1,27 +1,40 @@
-import 'package:http/http.dart' as http;
-import '../config/constants.dart';
+import '../services/genkit_service.dart';
 
+/// AWS Bedrock service that delegates to Genkit Cloud Functions.
+/// The Bedrock multi-agent workflow (Planner -> Research -> Guide) is
+/// now implemented as a Genkit flow with mode='bedrock', which mirrors
+/// the Python Bedrock AgentCore pipeline via Firebase Cloud Functions.
 class AwsBedrockService {
-  final String baseUrl = AppConstants.apiBaseUrl;
+  final GenkitService _genkitService = GenkitService();
 
-  // TODO: Implement Bedrock AgentCore chat via API Gateway
-
-  Future<String> sendMessage({
-    required String sessionId,
+  /// Send a message using the Bedrock multi-agent workflow via Genkit.
+  Future<Map<String, dynamic>> sendMessage({
     required String message,
+    String? userId,
+    List<Map<String, String>>? history,
   }) async {
-    // TODO: POST /agent/chat
-    // Returns AI agent response text
-    throw UnimplementedError();
+    return await _genkitService.chatWithGuide(
+      message: message,
+      userId: userId,
+      history: history,
+      mode: 'bedrock',
+    );
   }
 
+  /// Verify a photo using the Genkit photo verification flow.
   Future<Map<String, dynamic>> verifyPhoto({
     required String challengeId,
     required String imageBase64,
-    required String challengeType,
-    required String challengeLocation,
+    required double userLatitude,
+    required double userLongitude,
+    required String userId,
   }) async {
-    // TODO: POST /challenges/{id}/complete with photo for AI verification
-    throw UnimplementedError();
+    return await _genkitService.verifyPhoto(
+      challengeId: challengeId,
+      imageBase64: imageBase64,
+      userLatitude: userLatitude,
+      userLongitude: userLongitude,
+      userId: userId,
+    );
   }
 }

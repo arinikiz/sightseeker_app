@@ -6,20 +6,22 @@ class GenkitService {
   final FirebaseFunctions _functions = FirebaseFunctions.instance;
 
   /// Chat with the AI travel guide.
-  /// Sends user message + conversation history, returns AI response text.
-  Future<String> chatWithGuide({
+  /// [mode] can be 'guide' (standard Genkit) or 'bedrock' (multi-agent workflow).
+  /// Returns AI response text and optional route recommendations.
+  Future<Map<String, dynamic>> chatWithGuide({
     required String message,
     String? userId,
     List<Map<String, String>>? history,
+    String mode = 'guide',
   }) async {
-    // TODO: wire up when frontend chat screen is ready
     final callable = _functions.httpsCallable('chatWithGuide');
     final result = await callable.call({
       'message': message,
       'userId': userId,
       'history': history,
+      'mode': mode,
     });
-    return result.data['response'] as String;
+    return Map<String, dynamic>.from(result.data as Map);
   }
 
   /// Verify a challenge photo + GPS position.
@@ -31,7 +33,6 @@ class GenkitService {
     required double userLongitude,
     required String userId,
   }) async {
-    // TODO: wire up when photo capture flow is ready
     final callable = _functions.httpsCallable('verifyPhoto');
     final result = await callable.call({
       'challengeId': challengeId,
@@ -44,7 +45,6 @@ class GenkitService {
   }
 
   /// Generate a personalized challenge route.
-  /// Returns ordered list of challenges with AI reasoning.
   Future<Map<String, dynamic>> generateRoute({
     required String userId,
     required List<String> interests,
@@ -52,7 +52,6 @@ class GenkitService {
     String? fitnessLevel,
     int? groupSize,
   }) async {
-    // TODO: wire up when route planning UI is ready
     final callable = _functions.httpsCallable('generateRoute');
     final result = await callable.call({
       'userId': userId,
@@ -72,7 +71,6 @@ class GenkitService {
     double? userLongitude,
     double? radiusMeters,
   }) async {
-    // TODO: wire up when browse/search UI is ready
     final callable = _functions.httpsCallable('browseLocations');
     final result = await callable.call({
       'query': query,
@@ -80,6 +78,17 @@ class GenkitService {
       'userLatitude': userLatitude,
       'userLongitude': userLongitude,
       'radiusMeters': radiusMeters,
+    });
+    return Map<String, dynamic>.from(result.data as Map);
+  }
+
+  /// Import discovered challenges from browser agent into Firestore.
+  Future<Map<String, dynamic>> importDiscoveredChallenges({
+    required List<Map<String, dynamic>> challenges,
+  }) async {
+    final callable = _functions.httpsCallable('importDiscoveredChallenges');
+    final result = await callable.call({
+      'challenges': challenges,
     });
     return Map<String, dynamic>.from(result.data as Map);
   }

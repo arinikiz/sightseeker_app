@@ -5,6 +5,8 @@ import '../screens/signup_screen.dart';
 import '../screens/home_screen.dart';
 import '../screens/challenge_detail_screen.dart';
 import '../screens/challenge_review_screen.dart';
+import '../screens/challenge_hub_screen.dart';
+import '../screens/photo_verify_screen.dart';
 import '../screens/leaderboard_screen.dart';
 
 class AppRoutes {
@@ -15,6 +17,8 @@ class AppRoutes {
   static const String challengeDetail = '/challenge-detail';
   static const String challengeComplete = '/challenge-complete';
   static const String challengeReview = '/challenge-review';
+  static const String challengeHub = '/challenge-hub';
+  static const String photoVerify = '/photo-verify';
   static const String leaderboard = '/leaderboard';
 
   static Map<String, WidgetBuilder> get routes {
@@ -35,6 +39,24 @@ class AppRoutes {
         final challengeId = args?['challengeId'] as String? ?? '';
         final challengeTitle = args?['challengeTitle'] as String? ?? 'Challenge';
         return ChallengeReviewScreen(
+          challengeId: challengeId,
+          challengeTitle: challengeTitle,
+        );
+      },
+      challengeHub: (context) {
+        final args = ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
+        final challengeId = args?['challengeId'] as String? ?? '';
+        final challengeTitle = args?['challengeTitle'] as String? ?? 'Challenge';
+        return ChallengeHubScreen(
+          challengeId: challengeId,
+          challengeTitle: challengeTitle,
+        );
+      },
+      photoVerify: (context) {
+        final args = ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
+        final challengeId = args?['challengeId'] as String? ?? '';
+        final challengeTitle = args?['challengeTitle'] as String? ?? 'Challenge';
+        return PhotoVerifyScreen(
           challengeId: challengeId,
           challengeTitle: challengeTitle,
         );

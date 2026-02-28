@@ -6,6 +6,7 @@ import { chatWithGuideFlow } from './flows/chatFlow.js';
 import { verifyPhotoFlow } from './flows/photoVerificationFlow.js';
 import { generateRouteFlow } from './flows/routeGenerationFlow.js';
 import { browseLocationsFlow } from './flows/browseLocationsFlow.js';
+import { importDiscoveredChallengesFlow } from './flows/importChallengesFlow.js';
 
 initializeApp();
 
@@ -29,4 +30,9 @@ export const generateRoute = onCallGenkit(
 export const browseLocations = onCallGenkit(
   { secrets: [openaiApiKey] },
   browseLocationsFlow,
+);
+
+export const importDiscoveredChallenges = onCallGenkit(
+  { secrets: [openaiApiKey] },
+  importDiscoveredChallengesFlow,
 );

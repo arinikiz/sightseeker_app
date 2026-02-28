@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 import '../config/theme.dart';
+import '../config/routes.dart';
 import '../controllers/tts_controller.dart';
 import '../models/map_place_detail.dart';
 import '../services/map_places_repository.dart';
 import '../services/api_service.dart';
+import '../providers/challenge_provider.dart';
 import '../widgets/challenge/challenge_header.dart';
 import '../widgets/challenge/challenge_info_section.dart';
 import '../widgets/challenge/challenge_reviews_section.dart';
@@ -204,8 +208,21 @@ class _ChallengeDetailScreenState extends State<ChallengeDetailScreen> {
                   SizedBox(
                     width: double.infinity,
                     child: FilledButton(
-                      onPressed: () {
-                        // Placeholder: Start Challenge / Navigate
+                      onPressed: () async {
+                        final userId = FirebaseAuth.instance.currentUser?.uid;
+                        if (userId != null && widget.placeId != null) {
+                          final provider = context.read<ChallengeProvider>();
+                          await provider.acceptChallenge(widget.placeId!, userId);
+                        }
+                        if (mounted && widget.placeId != null) {
+                          Navigator.of(context).pushNamed(
+                            AppRoutes.challengeHub,
+                            arguments: {
+                              'challengeId': widget.placeId,
+                              'challengeTitle': detail.title,
+                            },
+                          );
+                        }
                       },
                       style: FilledButton.styleFrom(
                         backgroundColor: AppTheme.primaryColor,
@@ -215,7 +232,7 @@ class _ChallengeDetailScreenState extends State<ChallengeDetailScreen> {
                           borderRadius: BorderRadius.circular(12),
                         ),
                       ),
-                      child: const Text('Start Challenge'),
+                      child: const Text('Join Challenge'),
                     ),
                   ),
                   const SizedBox(height: 16),
