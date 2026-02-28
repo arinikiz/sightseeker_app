@@ -6,7 +6,7 @@ import requests
 
 AGENT_ARN = "arn:aws:bedrock-agentcore:us-east-1:975263988636:runtime/travelAgent_Agent-HET7Du6ZKx"
 LOCAL_DEV_URL = "http://localhost:8080/invocations"
-USE_LOCAL = False
+USE_LOCAL = True
 
 # ── 15+ challenges spanning all major HK districts ──────────
 
@@ -355,18 +355,18 @@ def print_result(result, scenario_name: str = ""):
         try:
             result = json.loads(result)
         except json.JSONDecodeError:
-            print("Raw (unparsed) response:")
-            print(result)
+            print("[PARSE ERROR] Could not parse as JSON:")
+            print(result[:500])
             return
 
     if not isinstance(result, dict):
-        print("Raw (unparsed) response:")
-        print(result)
+        print("[PARSE ERROR] Unexpected type:", type(result))
+        print(str(result)[:500])
         return
 
     if "raw" in result:
-        print("Raw (unparsed) response:")
-        print(result["raw"])
+        print("[PARSE ERROR] Raw response (not JSON):")
+        print(result["raw"][:500])
         return
 
     print("\nGUIDE RESPONSE:")
@@ -377,16 +377,22 @@ def print_result(result, scenario_name: str = ""):
     if route:
         print("\nROUTE:")
         print("-" * 40)
-        for i, c in enumerate(route.get("challenges", []), 1):
+        challenges = route.get("challenges", [])
+        for i, c in enumerate(challenges, 1):
             print(f"  {i}. {c['title']} ({c['type']}, {c['expected_duration']})")
             print(f"     Location: {c['location']}")
             print(f"     Reason: {c.get('reason', 'N/A')}")
-            print()
-        print(f"  Total duration: {route.get('total_duration', 'N/A')}")
-        print(f"  Start: {route.get('start_location')}")
-        print(f"  End: {route.get('end_location')}")
+        print(f"\n  Total duration:  {route.get('total_duration', 'N/A')}")
+        print(f"  Travel time:     {route.get('estimated_travel_time', 'N/A')}")
+        print(f"  Start:           {route.get('start_location')}")
+        print(f"  End:             {route.get('end_location')}")
     else:
-        print("\n  (no route returned)")
+        print("\n  [WARNING] No route returned")
+
+    print("\n" + "=" * 70)
+    print("FIREBASE-READY JSON:")
+    print("=" * 70)
+    print(json.dumps(result, indent=2, ensure_ascii=False))
     print()
 
 
