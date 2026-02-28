@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../config/theme.dart';
 import 'map_screen.dart';
 import 'ai_agent_screen.dart';
 import 'social_screen.dart';

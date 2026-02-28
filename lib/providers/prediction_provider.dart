@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import '../models/prediction.dart';
 
 class PredictionProvider extends ChangeNotifier {
-  List<Prediction> _predictions = [];
+  final List<Prediction> _predictions = [];
   bool _isLoading = false;
 
   List<Prediction> get predictions => _predictions;
