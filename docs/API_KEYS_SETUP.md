@@ -9,10 +9,10 @@ No secrets are committed. Each developer adds their own keys locally.
 
 ## 2. Web (Google Maps JS)
 
-- **Where to paste:** `web/maps_key.local.js`
-- **First time:** Create `web/maps_key.local.js` with:  
+- **Where to paste:** `web/maps_key.local.js` (and optionally `lib/web/maps_key.local.js` if your app serves from there)
+- **First time:** Create the file with:  
   `window.GMAPS_API_KEY = 'YOUR_GOOGLE_MAPS_API_KEY';`
-- **Note:** `web/maps_key.local.js` is in `.gitignore`. If the file is missing, the map will load with a blank key (no tiles).
+- **Note:** The key file is in `.gitignore`. The Maps JavaScript API must be loaded in `index.html` (see the script tags that load `maps_key.local.js` and then `https://maps.googleapis.com/maps/api/js?key=...`). If the key file is missing, the map will load with a blank key (no tiles) and you may see "Cannot read properties of undefined (reading 'maps')".
 
 ## 3. Android
 

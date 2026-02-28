@@ -1,6 +1,7 @@
 import '../models/map_place.dart';
 import '../models/map_place_detail.dart';
 import 'api_service.dart';
+import 'dataBaseInteractions.dart';
 
 /// Abstraction for loading map places.
 ///
@@ -69,23 +70,44 @@ class ApiMapPlacesRepository implements MapPlacesRepository {
 
   @override
   Future<MapPlaceDetail?> getPlaceDetailById(String id) async {
-    // TEMPORARY: Resolve from stub list and add stub listing/review data.
-    // In production: await apiService.getPlaceDetail(id) and map to MapPlaceDetail.
+    // 1. Try stub (map) places first.
     final matches = _stubPlaces.where((p) => p.id == id).toList();
-    if (matches.isEmpty) return null;
-    final place = matches.first;
-
-    final stubReviews = _stubReviewsFor(id);
-    return MapPlaceDetail.fromMapPlace(
-      place,
-      category: 'Adventure',
-      hours: 'Sunrise – Sunset',
-      tags: ['hiking', 'photo', 'landmark'],
-      distanceKm: id == 'big_buddha' ? 12.0 : (id == 'victoria_peak' ? 5.0 : 2.0),
-      estimatedDuration: id == 'big_buddha' ? '2–3 hours' : '1–2 hours',
-      difficulty: id == 'big_buddha' ? 'Medium' : 'Easy',
-      rewardPoints: 150,
-      reviews: stubReviews,
+    if (matches.isNotEmpty) {
+      final place = matches.first;
+      final stubReviews = _stubReviewsFor(id);
+      return MapPlaceDetail.fromMapPlace(
+        place,
+        category: 'Adventure',
+        hours: 'Sunrise – Sunset',
+        tags: ['hiking', 'photo', 'landmark'],
+        distanceKm: id == 'big_buddha' ? 12.0 : (id == 'victoria_peak' ? 5.0 : 2.0),
+        estimatedDuration: id == 'big_buddha' ? '2–3 hours' : '1–2 hours',
+        difficulty: id == 'big_buddha' ? 'Medium' : 'Easy',
+        rewardPoints: 150,
+        reviews: stubReviews,
+      );
+    }
+    // 2. Fallback: load from Firestore (e.g. profile joined/completed challenges).
+    final firestoreDetail = await fetchChallengeDetailById(id);
+    if (firestoreDetail == null) return null;
+    return MapPlaceDetail(
+      id: firestoreDetail['id'] as String,
+      title: firestoreDetail['title'] as String,
+      description: firestoreDetail['description'] as String,
+      location: firestoreDetail['location'] as String,
+      priceLabel: firestoreDetail['priceLabel'] as String? ?? '',
+      latitude: (firestoreDetail['latitude'] as num).toDouble(),
+      longitude: (firestoreDetail['longitude'] as num).toDouble(),
+      colorHex: firestoreDetail['colorHex'] as String? ?? '#43A047',
+      imageUrl: firestoreDetail['imageUrl'] as String?,
+      category: firestoreDetail['category'] as String?,
+      hours: firestoreDetail['hours'] as String?,
+      tags: List<String>.from(firestoreDetail['tags'] ?? []),
+      distanceKm: (firestoreDetail['distanceKm'] as num?)?.toDouble(),
+      estimatedDuration: firestoreDetail['estimatedDuration'] as String?,
+      difficulty: firestoreDetail['difficulty'] as String?,
+      rewardPoints: firestoreDetail['rewardPoints'] as int?,
+      reviews: const [],
     );
   }
 

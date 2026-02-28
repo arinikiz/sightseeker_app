@@ -29,8 +29,19 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
 
-  <title>lib</title>
+  <title>HK Explorer</title>
   <link rel="manifest" href="manifest.json">
+
+  <!-- Google Maps JS API: key from maps_key.local.js (gitignored). Load before Flutter so google.maps is defined. -->
+  <script src="maps_key.local.js"></script>
+  <script>
+    (function() {
+      var key = window.GMAPS_API_KEY || '';
+      if (key) {
+        document.write('<script src="https://maps.googleapis.com/maps/api/js?key=' + key + '"><\/script>');
+      }
+    })();
+  </script>
 </head>
 <body>
   <script src="flutter_bootstrap.js" async></script>
