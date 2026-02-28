@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "522075253062",
+    "project_id": "hkexpo-5ed70",
+    "storage_bucket": "hkexpo-5ed70.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:522075253062:android:6c2ef5182b953e0fb05d47",
+        "android_client_info": {
+          "package_name": "com.example.lib"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAiQqTqpPqTba2zI9SzeO3i1E2ClGCmbY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
