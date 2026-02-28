@@ -27,16 +27,6 @@ class ApiService {
     throw UnimplementedError();
   }
 
-  Future<List<dynamic>> getPredictions() async {
-    // TODO: GET /predictions
-    throw UnimplementedError();
-  }
-
-  Future<void> makePrediction(String challengeId, int prediction) async {
-    // TODO: POST /predictions
-    throw UnimplementedError();
-  }
-
   Future<List<dynamic>> getLeaderboard({String period = 'weekly'}) async {
     // TODO: GET /leaderboard
     throw UnimplementedError();

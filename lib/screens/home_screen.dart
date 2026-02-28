@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'map_screen.dart';
 import 'ai_agent_screen.dart';
-import 'social_screen.dart';
-import 'predictions_screen.dart';
+import 'routes_screen.dart';
 import 'profile_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -18,8 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final List<Widget> _screens = const [
     MapScreen(),
     AiAgentScreen(),
-    SocialScreen(),
-    PredictionsScreen(),
+    RoutesScreen(),
     ProfileScreen(),
   ];
 
@@ -40,12 +38,8 @@ class _HomeScreenState extends State<HomeScreen> {
             label: 'AI Guide',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.people),
-            label: 'Social',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.trending_up),
-            label: 'Predictions',
+            icon: Icon(Icons.route),
+            label: 'Routes',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
