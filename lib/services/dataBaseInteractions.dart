@@ -172,3 +172,45 @@ class DatabaseSeeder {
     }
   }
 }
+
+
+///////////////// Fetching challenge Details for Google Api /////////////////
+
+class ChallengeService {
+  final FirebaseFirestore _db = FirebaseFirestore.instance;
+
+  Future<List<Map<String, dynamic>>> fetchAllChallenges() async {
+    try {
+      // Fetch the collection from Firestore
+      QuerySnapshot snapshot = await _db.collection('challenges').get();
+
+      // Map the documents into a structured List
+      return snapshot.docs.map((doc) {
+        final data = doc.data() as Map<String, dynamic>;
+
+        // Convert Firestore GeoPoint to a List [latitude, longitude]
+        List<double> formattedLocation = [];
+        if (data['location'] is GeoPoint) {
+          GeoPoint geo = data['location'];
+          formattedLocation = [geo.latitude, geo.longitude];
+        }
+
+        return {
+          'chlgID': doc.id,
+          'chlg_pic_url': data['chlg_pic_url'] ?? '',
+          'description': data['description'] ?? '',
+          'difficulty': data['difficulty'] ?? '',
+          'expected_duration': data['expected_duration'] ?? '',
+          'location': formattedLocation,
+          'title': data['title'] ?? '',
+          'type': data['type'] ?? '',
+        };
+      }).toList();
+
+    } catch (e, stackTrace) {
+      debugPrint("Error fetching challenges: $e");
+      debugPrint("Stack trace: $stackTrace");
+      return []; // Return an empty list on failure
+    }
+  }
+}
