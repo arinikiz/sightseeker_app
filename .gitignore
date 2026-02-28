@@ -32,10 +32,17 @@ macos/.symlinks/
 *.swp
 .DS_Store
 .atom/
+.build/
 .buildlog/
 .history
 .svn/
+.swiftpm/
 migrate_working_dir/
+
+# API keys (local overrides; do not commit real keys)
+lib/config/api_keys.local.dart
+web/maps_key.local.js
+ios/Flutter/Secrets.xcconfig
 
 # Environment
 .env
