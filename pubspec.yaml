@@ -27,6 +27,7 @@ dependencies:
   fl_chart: ^0.65.0
   timeago: ^3.6.1
   google_fonts: ^6.1.0
+  firebase_storage: ^11.6.5
 
 dev_dependencies:
   flutter_test:
