@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import '../config/constants.dart';
+import '../models/map_place.dart';
 
 class ApiService {
   final String baseUrl = AppConstants.apiBaseUrl;
@@ -44,6 +45,13 @@ class ApiService {
 
   Future<Map<String, dynamic>> getUserProfile(String userId) async {
     // TODO: GET /users/{id}/profile
+    throw UnimplementedError();
+  }
+
+  Future<List<MapPlace>> getMapPlaces() async {
+    // TODO: GET /map/places (or similar) and parse into `MapPlace` models.
+    // This will replace the hardcoded data currently used by
+    // `ApiMapPlacesRepository` once the endpoint is ready.
     throw UnimplementedError();
   }
 }

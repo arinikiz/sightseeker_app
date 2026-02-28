@@ -20,6 +20,12 @@ class AppRoutes {
       auth: (context) => const AuthScreen(),
       home: (context) => const HomeScreen(),
       leaderboard: (context) => const LeaderboardScreen(),
+      challengeDetail: (context) {
+        final args = ModalRoute.of(context)?.settings.arguments;
+        return ChallengeDetailScreen(
+          placeId: args is String ? args : null,
+        );
+      },
     };
   }
 }
