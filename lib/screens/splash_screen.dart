@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../config/theme.dart';
+import '../config/routes.dart';
+import '../services/auth_service.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -17,9 +19,13 @@ class _SplashScreenState extends State<SplashScreen> {
 
   Future<void> _navigateNext() async {
     await Future.delayed(const Duration(seconds: 2));
-    if (mounted) {
-      Navigator.pushReplacementNamed(context, '/home');
-    }
+    if (!mounted) return;
+
+    final authService = AuthService();
+    final destination =
+        authService.currentUser != null ? AppRoutes.home : AppRoutes.auth;
+
+    Navigator.pushReplacementNamed(context, destination);
   }
 
   @override

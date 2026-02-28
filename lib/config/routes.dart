@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../screens/splash_screen.dart';
 import '../screens/auth_screen.dart';
+import '../screens/signup_screen.dart';
 import '../screens/home_screen.dart';
 import '../screens/challenge_detail_screen.dart';
 import '../screens/challenge_review_screen.dart';
@@ -9,6 +10,7 @@ import '../screens/leaderboard_screen.dart';
 class AppRoutes {
   static const String splash = '/';
   static const String auth = '/auth';
+  static const String signUp = '/sign-up';
   static const String home = '/home';
   static const String challengeDetail = '/challenge-detail';
   static const String challengeComplete = '/challenge-complete';
@@ -19,6 +21,7 @@ class AppRoutes {
     return {
       splash: (context) => const SplashScreen(),
       auth: (context) => const AuthScreen(),
+      signUp: (context) => const SignUpScreen(),
       home: (context) => const HomeScreen(),
       leaderboard: (context) => const LeaderboardScreen(),
       challengeDetail: (context) {
