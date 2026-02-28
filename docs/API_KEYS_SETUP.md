@@ -9,10 +9,12 @@ No secrets are committed. Each developer adds their own keys locally.
 
 ## 2. Web (Google Maps JS)
 
-- **Where to paste:** `web/maps_key.local.js` (and optionally `lib/web/maps_key.local.js` if your app serves from there)
-- **First time:** Create the file with:  
-  `window.GMAPS_API_KEY = 'YOUR_GOOGLE_MAPS_API_KEY';`
-- **Note:** The key file is in `.gitignore`. The Maps JavaScript API must be loaded in `index.html` (see the script tags that load `maps_key.local.js` and then `https://maps.googleapis.com/maps/api/js?key=...`). If the key file is missing, the map will load with a blank key (no tiles) and you may see "Cannot read properties of undefined (reading 'maps')".
+- **Where to paste:** `web/maps_key.local.js` (must be in `web/` so the app can load it; `lib/web/` is not served).
+- **First time:** Copy the template and add your key:
+  1. Copy `web/maps_key.local.js.template` to `web/maps_key.local.js`.
+  2. Open `web/maps_key.local.js` and set:  
+     `window.GMAPS_API_KEY = 'YOUR_GOOGLE_MAPS_API_KEY';`
+- **Note:** `web/maps_key.local.js` is in `.gitignore`. `index.html` loads it first, then loads the Maps script with that key so `google.maps` is defined before Flutter runs. If the key file is missing or the key is blank, you will see **"Cannot read properties of undefined (reading 'maps')"**.
 
 ## 3. Android
 
@@ -37,7 +39,7 @@ No secrets are committed. Each developer adds their own keys locally.
 | Platform | File to create/edit | Key variable / content |
 |----------|---------------------|-------------------------|
 | **Dart** | `lib/config/api_keys.local.dart` | `const String googleMapsApiKey = '...';` |
-| **Web**  | `web/maps_key.local.js`           | `window.GMAPS_API_KEY = '...';` |
+| **Web**  | Copy `web/maps_key.local.js.template` → `web/maps_key.local.js` | `window.GMAPS_API_KEY = '...';` |
 | **Android** | `android/local.properties`    | `MAPS_API_KEY=...` |
 | **iOS**  | `ios/Flutter/Secrets.xcconfig`    | `GOOGLE_MAPS_API_KEY=...` |
 

@@ -5,8 +5,6 @@ import 'config/routes.dart';
 import 'providers/challenge_provider.dart';
 import 'providers/user_provider.dart';
 import 'providers/chat_provider.dart';
-import 'providers/prediction_provider.dart';
-
 class HKExplorerApp extends StatelessWidget {
   const HKExplorerApp({super.key});
 
@@ -17,7 +15,6 @@ class HKExplorerApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => ChallengeProvider()),
         ChangeNotifierProvider(create: (_) => UserProvider()),
         ChangeNotifierProvider(create: (_) => ChatProvider()),
-        ChangeNotifierProvider(create: (_) => PredictionProvider()),
       ],
       child: MaterialApp(
         title: 'HK Explorer',

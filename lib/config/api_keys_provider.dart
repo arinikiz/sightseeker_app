@@ -1,6 +1,6 @@
-/// Single entry point for API keys. Uses api_keys.dart (blank in repo).
-/// For a local override: copy api_keys.local.template.dart to api_keys.local.dart
-/// and paste your key (that file is gitignored). Build succeeds without it.
-import 'api_keys.dart';
+/// Single entry point for API keys.
+/// On web: reads window.GMAPS_API_KEY (set by web/maps_key.local.js) so Directions API uses the same key as the map.
+/// On iOS/Android: uses api_keys.dart (set api key there or in api_keys.local.dart for Directions to work).
+import 'api_keys_impl_web.dart' if (dart.library.io) 'api_keys_impl_io.dart' as _impl;
 
-String getGoogleMapsApiKey() => googleMapsApiKey;
+String getGoogleMapsApiKey() => _impl.getGoogleMapsApiKey();
