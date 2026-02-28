@@ -1,0 +1,148 @@
+{
+  "challenges": [
+    {
+      "description": "Your quest begins along the edge of Victoria Harbour, where Hong Kong’s skyline ignites after dark. Start at the Tsim Sha Tsui waterfront and walk the promenade, hunting for the city’s most spectacular reflections on the water. Time your journey with the nightly light show, scanning for laser beams shooting from the tops of skyscrapers on both sides of the harbour. Along the way, locate at least three iconic towers by name, and capture a long‑exposure style shot (or your best attempt) of the ferries gliding past. Bonus objective: cross the water on the historic Star Ferry and compare the view from Central’s side. Will you brave the wind, weave through crowds, and claim the title of Nightscape Hunter by spotting your perfect, unobstructed panorama before the show ends?",
+      "difficulty": "easy",
+      "location": [
+        114.165,
+        22.293
+      ],
+      "type": "sightseeing",
+      "title": "Victoria Harbour Nightscape Hunter",
+      "duration": 2.5,
+      "photo_url": null
+    },
+    {
+      "description": "Rise above the city and claim the ultimate Hong Kong panorama. Your mission: reach the summit of Victoria Peak and complete a full loop of the Peak Circle Walk. Begin by choosing your ascent—crowd‑pleasing Peak Tram or the tougher uphill bus and foot combo. At the top, resist the urge to stop immediately; instead, follow the winding trail that skirts the mountaintop, hunting for the quietest lookout. Your objectives: find a viewpoint facing both Central’s skyscrapers and Kowloon’s ridgeline, spot at least one passing Star Ferry far below, and identify the green slopes of the New Territories on the horizon. Complete the loop before sunset, then return to the Sky Terrace or Lugard Road for a second, illuminated cityscape. Only when you’ve seen Hong Kong transform from day to neon night have you truly conquered the Peak.",
+      "difficulty": "medium",
+      "location": [
+        114.149,
+        22.275
+      ],
+      "type": "sightseeing",
+      "title": "Peak Panorama Conqueror",
+      "duration": 3.0,
+      "photo_url": null
+    },
+    {
+      "description": "Journey to Ngong Ping on Lantau Island and undertake a modern pilgrimage to the Tian Tan Buddha. Your challenge starts with reaching the plateau—either by soaring above forests and sea on the Ngong Ping 360 cable car or by taking the winding mountain road. Once there, stand at the base of the massive bronze statue and face the staircase of over 260 steps. Your mission: climb steadily without stopping more than three times, pausing at landings to count the surrounding smaller statues and note their gestures. At the top, circle the Buddha, find the panels describing its symbolism, and pick one idea that resonates with you. Afterwards, explore Po Lin Monastery, light an incense coil or stick respectfully, and note the contrast between chants, incense and the wild mountain backdrop. Complete the quest by tasting a simple vegetarian snack in the village before descending.",
+      "difficulty": "medium",
+      "location": [
+        113.904,
+        22.252
+      ],
+      "type": "cultural",
+      "title": "Big Buddha Pilgrim’s Ascent",
+      "duration": 4.0,
+      "photo_url": null
+    },
+    {
+      "description": "Dive into the chaos of Temple Street Night Market and test your bargaining nerve. As neon signs flicker on above Yau Ma Tei and Jordan, head into the maze of stalls selling everything from trinkets to gadgets. Your objectives: successfully haggle at least one price down by 30 percent, find a Hong Kong–themed souvenir under your self‑declared budget, and spot a fortune‑telling stall in operation. Thread through crowds of locals and visitors, dodge trolleys and scooters, and follow your senses towards sizzling dai pai dong food corners at the periphery. To complete the challenge, pair your new treasure with a late‑night snack—no international chains allowed. Bonus points if you can identify at least three Cantonese dishes on a handwritten menu before you order. Escape with your wallet, your prize, and stories of nocturnal Hong Kong energy.",
+      "difficulty": "easy",
+      "location": [
+        114.169,
+        22.306
+      ],
+      "type": "shopping",
+      "title": "Temple Street Night Market Raider",
+      "duration": 2.0,
+      "photo_url": null
+    },
+    {
+      "description": "Welcome to Mong Kok, one of the densest and most energetic neighborhoods on earth. Your mission is to link three legendary streets in a single urban marathon: Ladies’ Market, Sneaker Street and the Goldfish Market. Start at Tung Choi Street, weaving past endless stalls of fashion, accessories and quirky souvenirs. Set yourself a limit—only one purchase here. Next, sprint (figuratively) to Fa Yuen Street, Hong Kong’s sneaker mecca. Your task: find three brands or models you’ve never seen at home. Finally, navigate to Prince Edward Road West and stroll the Goldfish Market, where aquariums and bagged fish line the sidewalks. Along the way, track how many different smells, languages and music styles you encounter. Finish the challenge by finding a quiet side street or cha chaan teng, catching your breath while the Mong Kok frenzy continues around you.",
+      "difficulty": "medium",
+      "location": [
+        114.169,
+        22.318
+      ],
+      "type": "shopping",
+      "title": "Mong Kok Street Market Marathon",
+      "duration": 3.0,
+      "photo_url": null
+    },
+    {
+      "description": "Step aboard a piece of Hong Kong history and cross Victoria Harbour the old‑school way. Your mission is to ride the Star Ferry between Tsim Sha Tsui and Central or Wan Chai, treating the short journey as a time‑warp voyage. Choose the upper deck for the breeze and the view, then position yourself where you can see both shorelines. As the ferry pulls away, count how many distinct skyline icons you can name—bank towers, hotels, cultural centres—before reaching the opposite pier. Listen for the rhythmic churn of the engines and imagine the same crossing decades ago, before today’s highways and tunnels. Upon docking, locate the original clock tower in Tsim Sha Tsui or the colonial‑era pierside structures in Central, and snap a before‑and‑after photo pair. Complete the quest by plotting your next harbour crossing on a paper map or pier schedule, analogue‑style.",
+      "difficulty": "easy",
+      "location": [
+        114.166,
+        22.293
+      ],
+      "type": "sightseeing",
+      "title": "Star Ferry Time‑Warp Sailor",
+      "duration": 1.0,
+      "photo_url": null
+    },
+    {
+      "description": "Your challenge is to conquer Hong Kong Disneyland in a single, strategically planned day. On arrival at the Main Street, U.S.A. entrance, grab a park map and set a route that touches every land—Fantasyland, Tomorrowland, Adventureland, and the unique themed zones like Mystic Point and Grizzly Gulch. Your objectives: ride at least one marquee attraction in each area (think Big Grizzly Mountain or Mystic Manor), watch one major show or parade, and taste a themed snack you’ve never tried before. Use Fastpass and mobile wait‑time boards to optimise your path, racing the clock as queues build. Bonus mission: spot three hidden Mickeys scattered in décor and architecture. As night falls, secure a viewing spot for the fireworks or evening spectacular, reflecting on the day’s tactical wins. Only when your feet ache and your camera is full have you completed the Magic Sprint.",
+      "difficulty": "medium",
+      "location": [
+        114.046,
+        22.313
+      ],
+      "type": "adventure",
+      "title": "Hong Kong Disneyland Magic Sprint",
+      "duration": 8.0,
+      "photo_url": null
+    },
+    {
+      "description": "Ocean Park Hong Kong is your arena, and you must master both of its worlds: the marine side and the thrill‑ride summit. Begin in the Waterfront zone, exploring aquariums and animal exhibits—your task is to identify three species you’ve never seen before and note one conservation message from the park. Next, brace yourself for the dramatic cable car or Ocean Express climb to the Summit. Up top, commit to at least two major thrill rides, from roller coasters skimming the cliff edge to spinning towers with sweeping sea views. Track your personal fear factor before and after each ride. Between adrenaline bursts, find a quiet lookout to spot passing ships or distant islands. To complete the challenge, return to the lower zone before closing, ending with a calm attraction or snack that brings your pulse back down. You’ve earned the title of Dual‑World Challenger.",
+      "difficulty": "medium",
+      "location": [
+        114.175,
+        22.246
+      ],
+      "type": "adventure",
+      "title": "Ocean Park Dual‑World Challenger",
+      "duration": 7.0,
+      "photo_url": null
+    },
+    {
+      "description": "Step into Hong Kong’s once‑restricted frontier and explore the border town of Sha Tau Kok. This challenge requires planning: secure the necessary visit arrangements or tour, then travel deep into the northeastern New Territories. Your mission is to uncover traces of Hakka and village history while standing within sight of mainland Shenzhen. Wander the streets of the opened area, searching for ancestral halls, old shopfronts and any remaining village architecture. Try to identify at least one traditional architectural detail—roof tiles, door gods, or altars—and record its story from a local guide or signboard. Seek out views of Starling Inlet and the “Boundary Street” pier, contemplating the geopolitical line just beyond. Complete the quest by tasting a local snack or seafood dish unique to the region, then navigate your way back to urban Hong Kong, having crossed an invisible frontier few visitors see.",
+      "difficulty": "hard",
+      "location": [
+        114.215,
+        22.538
+      ],
+      "type": "cultural",
+      "title": "Sha Tau Kok Frontier Explorer",
+      "duration": 6.0,
+      "photo_url": null
+    },
+    {
+      "description": "Hong Kong’s outlying islands are your playground in this island‑hopping quest. Start from Central Ferry Piers, where your first objective is to choose two contrasting islands—perhaps laid‑back Cheung Chau and green, hilly Lamma. Board your first ferry and treat the ride as reconnaissance: track how the skyline recedes and fishing villages appear. On arrival at island one, follow a coastal path, find a temple or shrine, and sample a local specialty like fish balls or mango mochi. Then catch a second ferry to island two, aiming to hike a short trail or reach a beach viewpoint before the day fades. Keep your eyes peeled for small temples, village cats, and drying seafood along the way. Finish the challenge back at the urban piers after dark, with one final look at the harbour you’ve crossed multiple times—proof of a day spent chasing horizons.",
+      "difficulty": "medium",
+      "location": [
+        114.127,
+        22.285
+      ],
+      "type": "adventure",
+      "title": "Island‑Hopping Harbourscape Quest",
+      "duration": 6.0,
+      "photo_url": null
+    },
+    {
+      "description": "Plunge into Hong Kong’s all‑weather Water World at Ocean Park and attempt to ride every major slide zone in a single visit. On entry, study the park map and strategise: cluster attractions by height requirement and thrill level, then plot a loop that avoids backtracking. Your goals: conquer at least one high‑speed drop slide, one multi‑rider raft experience, and one relaxed lazy‑river or wave pool session for recovery. Keep an eye on the sea views from outdoor decks between runs—this is a water park with an ocean backdrop. Manage your energy with timed breaks and hydration missions at designated rest spots. Bonus: experience both an indoor and outdoor attraction during changing weather conditions. When your legs feel jellylike from stair climbs and your hair is permanently soaked, retreat to the exit, having truly earned your Wave Rider stripes.",
+      "difficulty": "medium",
+      "location": [
+        114.177,
+        22.239
+      ],
+      "type": "adventure",
+      "title": "Water World Wave Rider Challenge",
+      "duration": 5.0,
+      "photo_url": null
+    },
+    {
+      "description": "Traverse Hong Kong’s reinvented waterfront and link its new Harbourfront Shared Spaces into a single scenic trail. Begin at Belcher Bay Promenade in the west, where locals lounge on colourful furniture against a working‑harbour backdrop. Your mission: walk or cycle eastwards, threading together at least three distinct harbourfront segments—such as Sun Yat Sen Memorial Park, Tamar Park, and the Central or Wan Chai promenades. At each, complete a micro‑task: find a public art piece, a play structure, or a lounging deck that best captures the space’s character. Track how the skyline angles change as you move, and pause to note the busiest part of the harbour at that moment. Finish near the East Coast Park Precinct, where you must locate a spot where waves nearly touch the boardwalk. Only when you’ve crossed this urban shoreline corridor can you call yourself a Harbourfront Trailblazer.",
+      "difficulty": "easy",
+      "location": [
+        114.136,
+        22.288
+      ],
+      "type": "sightseeing",
+      "title": "Scenic Harbourfront Trailblazer",
+      "duration": 3.0,
+      "photo_url": null
+    }
+  ]
+}
