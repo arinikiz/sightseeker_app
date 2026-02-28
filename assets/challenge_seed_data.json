@@ -1,0 +1,98 @@
+[
+  {
+    "id": "c1",
+    "title": "Star Ferry Sunset",
+    "description": "Take the iconic Star Ferry across Victoria Harbour and capture the skyline at golden hour.",
+    "type": "photo",
+    "latitude": 22.2932,
+    "longitude": 114.1686,
+    "points": 100,
+    "difficulty": "easy",
+    "badge": "Harbour Explorer",
+    "sponsor": null
+  },
+  {
+    "id": "c2",
+    "title": "Peak Tram Conqueror",
+    "description": "Ride the Peak Tram to Victoria Peak and take a photo with the Hong Kong skyline behind you.",
+    "type": "photo",
+    "latitude": 22.2759,
+    "longitude": 114.1455,
+    "points": 150,
+    "difficulty": "easy",
+    "badge": "Peak Climber",
+    "sponsor": null
+  },
+  {
+    "id": "c3",
+    "title": "Temple Street Night Market",
+    "description": "Visit Temple Street Night Market, try a local street food dish, and photograph your plate.",
+    "type": "food",
+    "latitude": 22.3072,
+    "longitude": 114.1700,
+    "points": 120,
+    "difficulty": "easy",
+    "badge": "Night Owl",
+    "sponsor": { "name": "HK Tourism Board", "type": "tourism" }
+  },
+  {
+    "id": "c4",
+    "title": "Dragon's Back Trail",
+    "description": "Complete the Dragon's Back hiking trail (8.5km). Share your hiking stats: time, distance, and elevation.",
+    "type": "activity",
+    "latitude": 22.2451,
+    "longitude": 114.2326,
+    "points": 300,
+    "difficulty": "hard",
+    "badge": "Dragon Slayer",
+    "sponsor": null
+  },
+  {
+    "id": "c5",
+    "title": "Dim Sum Master",
+    "description": "Visit Tim Ho Wan and order at least 3 different dim sum dishes. Photograph each one!",
+    "type": "food",
+    "latitude": 22.3265,
+    "longitude": 114.1674,
+    "points": 150,
+    "difficulty": "medium",
+    "badge": "Dim Sum Connoisseur",
+    "sponsor": { "name": "Tim Ho Wan", "type": "restaurant" }
+  },
+  {
+    "id": "c6",
+    "title": "Big Buddha Pilgrimage",
+    "description": "Take the Ngong Ping 360 cable car and visit the Tian Tan Buddha. Photo with the statue required.",
+    "type": "photo",
+    "latitude": 22.2540,
+    "longitude": 113.9050,
+    "points": 250,
+    "difficulty": "medium",
+    "badge": "Zen Seeker",
+    "sponsor": { "name": "Ngong Ping 360", "type": "attraction" }
+  },
+  {
+    "id": "c7",
+    "title": "Sham Shui Po Art Walk",
+    "description": "Find and photograph 3 different street art pieces in the Sham Shui Po district.",
+    "type": "photo",
+    "latitude": 22.3306,
+    "longitude": 114.1592,
+    "points": 200,
+    "difficulty": "medium",
+    "badge": "Street Art Hunter",
+    "sponsor": { "name": "JCCAC Gallery", "type": "gallery" }
+  },
+  {
+    "id": "c8",
+    "title": "Symphony of Lights",
+    "description": "Watch the Symphony of Lights show at 8PM from Tsim Sha Tsui waterfront and capture the light show.",
+    "type": "photo",
+    "latitude": 22.2930,
+    "longitude": 114.1722,
+    "points": 100,
+    "difficulty": "easy",
+    "badge": "Light Chaser",
+    "sponsor": { "name": "HK Tourism Board", "type": "tourism" }
+  }
+]
