@@ -28,6 +28,7 @@ dependencies:
   timeago: ^3.6.1
   google_fonts: ^6.1.0
   firebase_storage: ^11.6.5
+  cloud_functions: ^4.7.6
 
 dev_dependencies:
   flutter_test:
