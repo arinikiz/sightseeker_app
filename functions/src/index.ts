@@ -11,28 +11,29 @@ import { discoverChallengesFlow } from './flows/discoverChallengesFlow.js';
 const openaiApiKey = defineSecret('OPENAI_API_KEY');
 
 export const chatWithGuide = onCallGenkit(
-  { secrets: [openaiApiKey] },
+  { secrets: [openaiApiKey], cors: true },
   chatWithGuideFlow,
 );
 
 export const verifyPhoto = onCallGenkit(
-  { secrets: [openaiApiKey] },
+  { secrets: [openaiApiKey], cors: true },
   verifyPhotoFlow,
 );
 
 export const generateRoute = onCallGenkit(
-  { secrets: [openaiApiKey] },
+  { secrets: [openaiApiKey], cors: true },
   generateRouteFlow,
 );
 
 export const browseLocations = onCallGenkit(
-  { secrets: [openaiApiKey] },
+  { secrets: [openaiApiKey], cors: true },
   browseLocationsFlow,
 );
 
 export const discoverChallengesFromWeb = onCallGenkit(
   {
     secrets: [openaiApiKey],
+    cors: true,
     timeoutSeconds: 120, // Fetch + AI extraction can take 60–90s
   },
   discoverChallengesFlow,
