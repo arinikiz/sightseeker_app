@@ -1,8 +1,10 @@
-import 'package:flutter/material.dart';
-import 'app.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart'; // This is the file the CLI just made!
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // TODO: Initialize Firebase / AWS services here
-  runApp(const HKExplorerApp());
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(const MyApp());
 }
